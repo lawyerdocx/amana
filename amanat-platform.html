@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>منصة إيصالات الأمانة</title>
+<style id="ps"></style>
+<style>
+:root{--n:#0f1f3d;--n2:#1b315e;--g:#c9a24a;--bg:#f2f4f8;--t:#1d2433;--m:#6b7385;--r:#b3261e}
+*{box-sizing:border-box}body{margin:0;font-family:Cairo,"Noto Naskh Arabic","Segoe UI",Tahoma,sans-serif;background:var(--bg);color:var(--t)}
+.app{display:flex;min-height:100vh}
+aside{width:230px;background:var(--n);color:#fff;padding:16px;position:sticky;top:0;height:100vh;flex-shrink:0}
+aside h1{font-size:18px;color:var(--g);margin:0 0 4px}aside p{font-size:12px;color:#aab;margin:0 0 18px}
+nav button{display:flex;gap:8px;align-items:center;width:100%;background:none;border:0;color:#fff;padding:11px;border-radius:8px;font:inherit;cursor:pointer;margin-bottom:4px}
+nav button.on,nav button:hover{background:var(--n2);box-shadow:inset -3px 0 var(--g)}
+svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+main{flex:1;padding:22px;min-width:0}h2{color:var(--n);margin-top:0}h3{margin:0 0 10px;color:var(--n)}
+.card,.stat{background:#fff;border-radius:12px;padding:16px;margin-bottom:14px;box-shadow:0 1px 4px #0001}
+.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:14px}
+.stat{text-align:center;color:var(--m);margin:0;border-top:3px solid var(--g)}.stat b{display:block;font-size:30px;color:var(--n)}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+label{display:block;font-size:13px;color:var(--m);margin-bottom:8px}
+input,select,textarea{width:100%;padding:10px;border:1px solid #c9ceda;border-radius:8px;font:inherit;margin-top:4px;background:#fff}
+textarea{min-height:90px;resize:vertical;line-height:1.9}
+.btn{padding:11px 18px;border-radius:8px;border:1px solid var(--n);background:var(--n);color:#fff;font:inherit;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.btn.g{background:var(--g);border-color:var(--g);color:#1a1a1a;font-weight:700}.btn.o{background:#fff;color:var(--n)}.btn.d{background:#fff;color:var(--r);border-color:var(--r)}
+.btn.s{padding:6px 10px;font-size:13px}.acts{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
+.steps{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}.steps button{flex:1;min-width:100px;padding:9px;border:0;border-radius:8px;background:#dfe3ec;font:inherit;cursor:pointer}
+.steps button.on{background:var(--n);color:#fff;box-shadow:0 3px var(--g)}
+.row{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;padding:12px 0;border-bottom:1px solid #e6e9f0}
+small,.mu{color:var(--m)}.warn{background:#fff8e1;border-right:4px solid var(--g);padding:10px;border-radius:6px;font-size:13px;margin:10px 0}
+.pr{display:flex;gap:6px;align-items:flex-start;margin-bottom:8px}.pr textarea{margin:0}.pr .acts{flex-direction:column;margin:0}
+.pv{overflow:auto;background:#cfd5e2;padding:14px;border-radius:10px}
+.sheet{background:#fff;color:#000;width:297mm;min-height:210mm;margin:auto;padding:var(--pm,20mm);box-shadow:0 2px 12px #0003;font-size:var(--fs,12pt);line-height:1.6;text-align:justify;font-family:"Noto Naskh Arabic",Cairo,"Traditional Arabic",serif}
+.sheet h1{text-align:center;margin:4px auto 8px;font-size:1.7em;color:#0f1f3d;width:60%;padding:4px 0;border-top:2px solid #c9a24a;border-bottom:2px solid #c9a24a}.sheet p{margin:.25em 0;text-align:justify;orphans:3;widows:3}.sheet p.pt{border-right:3px solid #c9a24a;padding:2px 12px;background:#f7f7f9;break-inside:avoid}.sheet.b{padding:0;min-height:0;width:auto;box-shadow:none;max-width:none;break-inside:avoid}.sheet p.in{font-weight:700}table.pt{width:100%;border-collapse:collapse;margin:8px 0;font-size:.85em;line-height:1.5;table-layout:fixed;break-inside:avoid}table.pt th,table.pt td{border:1px solid #555;padding:3px 6px;text-align:center;overflow-wrap:anywhere}table.pt thead th{background:#0f1f3d;color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}table.pt tbody th{background:#eef0f5;-webkit-print-color-adjust:exact;print-color-adjust:exact}table.pt .n{direction:ltr;white-space:nowrap}
+.oh{display:flex;gap:12px;align-items:center;border-bottom:2px solid #0f1f3d;padding-bottom:8px;font-size:.8em;color:#0f1f3d}.oh img{max-height:60px}
+.mt{display:flex;justify-content:space-between;font-size:.9em;border:1px solid #999;padding:2px 12px;border-radius:4px;margin-bottom:10px}.am{border:1.5px solid #0f1f3d;border-radius:6px;padding:6px 12px;margin:10px 0;text-align:center;break-inside:avoid;background:#fafafa;line-height:1.9}.am b{font-size:1.1em}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px;break-inside:avoid}.sg>div{break-inside:avoid;min-height:24mm;border:1px solid #777;border-radius:4px;padding:6px 8px;font-size:.85em}.sg b,.wt b{display:block;border-bottom:1px solid #bbb;margin-bottom:4px;color:#0f1f3d}
+.wt{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}.wt>div{break-inside:avoid;min-height:26mm;border:1px dashed #777;border-radius:4px;padding:6px 8px;font-size:.8em}
+#printArea,#toast{display:none}#toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--n);color:#fff;padding:12px 20px;border-radius:8px;z-index:9}
+#toast.e{background:var(--r)}
+@media(max-width:800px){.app{flex-direction:column}aside{width:auto;height:auto;position:static}nav{display:flex;overflow:auto;gap:4px}nav button{white-space:nowrap;width:auto}main{padding:12px}}
+@media print{.app,#toast{display:none!important}#printArea{display:block}body{background:#fff}#printArea .sheet{width:auto;min-height:0;padding:0;box-shadow:none;max-width:none}}
+</style></head><body>
+<div class="app"><aside><h1>منصة إيصالات الأمانة</h1><p>إنشاء وتحرير ومعاينة وطباعة إيصالات الأمانة بسهولة.</p>
+<nav id="nav"></nav></aside><main id="main"></main></div>
+<div id="printArea"></div><div id="toast"></div><input type="file" id="imp" accept=".json" hidden>
+<script>
+/* ===== أدوات عامة ===== */
+const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const IC={home:'M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z',plus:'M12 5v14M5 12h14',folder:'M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z',users:'M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2M10 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M21 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8',gear:'M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6M19 12l2-1-2-4-2 1-2-1V5h-4v2l-2 1-2-1-2 4 2 1v2l-2 1 2 4 2-1 2 1v2h4v-2l2-1 2 1 2-4-2-1z',print:'M6 9V3h12v6M6 18H4v-8h16v8h-2M7 14h10v7H7z',dl:'M12 3v12m-5-5l5 5 5-5M4 21h16'};
+const ic=n=>`<svg class="i" viewBox="0 0 24 24"><path d="${IC[n]}"/></svg>`;
+const GOV=['القاهرة','الجيزة','الإسكندرية','القليوبية','الشرقية','الدقهلية','البحيرة','المنوفية','الغربية','كفر الشيخ','دمياط','بورسعيد','الإسماعيلية','السويس','شمال سيناء','جنوب سيناء','الفيوم','بني سويف','المنيا','أسيوط','سوهاج','قنا','الأقصر','أسوان','البحر الأحمر','الوادي الجديد','مطروح'];
+const CUR=['جنيه مصري','دولار أمريكي','يورو','ريال سعودي','درهم إماراتي'];
+const KINDS={cash:'مبلغ نقدي',goods:'أشياء أو منقولات',docs:'مستندات',other:'أخرى'};
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const today=()=>new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
+const fmtD=d=>d?d.split('-').reverse().join('/'):'';
+function toast(m,e){const t=$('toast');t.textContent=m;t.className=e?'e':'';t.style.display='block';clearTimeout(toast.h);toast.h=setTimeout(()=>t.style.display='none',3500)}
+/* ===== التخزين المحلي ===== */
+const KEY='amanat_db_v1';
+let db={receipts:[],parties:[],settings:{office:'',addr:'',phone:'',logo:'',show:true,fs:12,mg:15,v:2,pre:'',next:1}},cur=null,step=0,view='dash',pe=null;
+function load(){try{const d=JSON.parse(localStorage.getItem(KEY));if(d)db={...db,...d,settings:{...db.settings,...d.settings}}}catch(e){toast('التخزين المحلي غير متاح، صدّر نسخة احتياطية باستمرار','e')}if(!db.settings.v){db.settings.fs=12;db.settings.mg=15;db.settings.v=2}applySet()}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){toast('تعذر الحفظ في المتصفح — صدّر نسخة احتياطية','e')}}
+function applySet(){const s=db.settings;document.documentElement.style.setProperty('--fs',s.fs+'pt');document.documentElement.style.setProperty('--pm',s.mg+'mm');$('ps').textContent=`@page{size:A4 landscape;margin:${s.mg}mm;@bottom-center{content:counter(page);font-size:10pt}}`}
+const nextNo=()=>(db.settings.pre||'')+String(db.settings.next).padStart(4,'0');
+/* ===== تحويل الأرقام إلى حروف عربية ===== */
+const O=['','واحد','اثنان','ثلاثة','أربعة','خمسة','ستة','سبعة','ثمانية','تسعة','عشرة','أحد عشر','اثنا عشر','ثلاثة عشر','أربعة عشر','خمسة عشر','ستة عشر','سبعة عشر','ثمانية عشر','تسعة عشر'],
+T=['','','عشرون','ثلاثون','أربعون','خمسون','ستون','سبعون','ثمانون','تسعون'],
+H=['','مائة','مائتان','ثلاثمائة','أربعمائة','خمسمائة','ستمائة','سبعمائة','ثمانمائة','تسعمائة'],
+SC=[['','',''],['ألف','ألفان','آلاف'],['مليون','مليونان','ملايين'],['مليار','ملياران','مليارات']];
+function grp(n){const p=[],h=Math.floor(n/100),r=n%100;if(h)p.push(H[h]);if(r){if(r<20)p.push(O[r]);else{const u=r%10;p.push((u?O[u]+' و':'')+T[Math.floor(r/10)])}}return p.join(' و')}
+function words(n){if(n===0)return'صفر';const g=[];while(n>0){g.push(n%1000);n=Math.floor(n/1000)}const o=[];for(let i=g.length-1;i>=0;i--){const v=g[i];if(!v)continue;if(i===0)o.push(grp(v));else if(v===1)o.push(SC[i][0]);else if(v===2)o.push(SC[i][1]);else if(v<=10)o.push(grp(v)+' '+SC[i][2]);else o.push(grp(v)+' '+SC[i][0])}return o.join(' و')}
+const parseAmt=s=>{const v=parseFloat(String(s||'').replace(/[٠-٩]/g,d=>d.charCodeAt(0)-1632).replace(/[,٬\s]/g,''));return isNaN(v)||v<0?null:v};
+function moneyWords(r){const v=parseAmt(r.amount);if(v===null||v>=1e12)return'';const i=Math.floor(v),f=Math.round((v-i)*100);let s=words(i)+' '+r.cur;if(f)s+=' و'+words(f)+(r.cur==='جنيه مصري'?' قرشًا':' جزءًا من مائة');return s+' لا غير'}
+const amtTxt=r=>{const v=parseAmt(r.amount);return v===null?'':v.toLocaleString('en-US',{maximumFractionDigits:2})+' '+r.cur};
+/* ===== نموذج الإيصال وتوليد النص ===== */
+const newReceipt=()=>({id:uid(),no:nextNo(),date:today(),place:'',gov:'',city:'',p1:{},p2:{},p3:{},kind:'cash',amount:'',cur:'جنيه مصري',words:'',wm:false,it:{},reason:'',purpose:'',to:'',due:'',extra:'',delivered:false,paras:[],edited:false,wit:[],status:'saved',ts:Date.now()});
+function subj(r){if(r.kind==='cash')return`مبلغًا نقديًا قدره ${amtTxt(r)} (${r.words||'………'})`;const t=r.it||{},x=[];if(t.type)x.push('النوع: '+t.type);if(t.cnt)x.push('العدد: '+t.cnt);if(t.qty)x.push('الكمية: '+t.qty);if(t.cond)x.push('الحالة: '+t.cond);if(t.other)x.push(t.other);return`${KINDS[r.kind]} وصفها: ${t.desc||'………'}${x.length?' ('+x.join('، ')+')':''}`}
+function gen(r){const B=v=>v||'………',who=(p,role)=>`السيد/ ${B(p.name)}${p.nat?'، '+p.nat+' الجنسية':''}، الرقم القومي ${B(p.nid)}، المقيم في ${B(p.addr)}${p.phone?'، هاتف '+p.phone:''}، ويُشار إليه فيما بعد بـ«${role}».`;
+const P=[`في يوم ${fmtD(r.date)}${r.place?'، بـ'+r.place:''}${r.city?'، '+r.city:''}${r.gov?'، محافظة '+r.gov:''}، حُرر هذا الإيصال بين الأطراف المبينة بياناتهم في الجدول التالي:`];
+P.push(r.delivered?`أقر المسلِّم بأنه سلّم المستلم، وأقر المستلم بأنه تسلّم منه فعليًا على سبيل الأمانة، ${subj(r)}، وذلك بتاريخ ${fmtD(r.date)}.`:`اتفق الطرفان على أن يكون محل هذه الأمانة ${subj(r)}. ولا يُعد هذا النص إقرارًا بحصول التسليم الفعلي إلا بعد تأكيده من الطرفين.`);
+if(r.reason)P.push('سبب التسليم: '+r.reason+'.');if(r.purpose)P.push('الغرض من الأمانة: '+r.purpose+'.');
+if(r.to)P.push('الجهة أو الشخص المطلوب تسليم الأمانة إليه: '+r.to+'.');if(r.due)P.push('تاريخ التسليم/الاستحقاق المتفق عليه: '+fmtD(r.due)+'.');if(r.extra)P.push('تفاصيل إضافية: '+r.extra);
+P.push('ويلتزم المستلم بالمحافظة على الأمانة واستخدامها في الغرض المبين أعلاه فقط، وبرد الأمانة أو تسليمها لمن هو مبين أعلاه وفق ما اتفق عليه الطرفان.','وهذا إقرار منهما بما ورد أعلاه وعليه جرى التوقيع.');return P}
+/* ===== التحقق ===== */
+function validate(r){const e=[],id=(p,n)=>{if(p.nid&&!/^\d{14}$/.test(p.nid.replace(/[٠-٩]/g,d=>d.charCodeAt(0)-1632)))e.push('الرقم القومي لـ'+n+' يجب أن يكون 14 رقمًا')};
+if(!r.no)e.push('رقم الإيصال مطلوب');if(!r.date)e.push('تاريخ الإيصال مطلوب');if(!r.p1.name)e.push('اسم المسلِّم مطلوب');if(!r.p2.name)e.push('اسم المستلم مطلوب');
+if(r.kind==='cash'&&!(parseAmt(r.amount)>0))e.push('المبلغ غير صحيح');if(r.kind!=='cash'&&!(r.it&&r.it.desc))e.push('وصف محل الأمانة مطلوب');
+id(r.p1,'المسلِّم');id(r.p2,'المستلم');id(r.p3||{},'المستفيد');(r.wit||[]).forEach(w=>id(w,'الشاهد'));
+if(db.receipts.some(x=>x.id!==r.id&&x.no===r.no))e.push('رقم الإيصال مستخدم في إيصال آخر');return e}
+/* ===== عرض الإيصال (للمعاينة والطباعة) ===== */
+function ptab(r){const row=(t,p)=>`<tr><th>${t}</th><td>${esc(p.name||'')}</td><td class="n">${esc(p.nid||'')}</td><td>${esc(p.nat||'')}</td><td>${esc(p.addr||'')}</td><td class="n">${esc(p.phone||'')}</td></tr>`;
+return`<table class="pt"><colgroup><col style="width:12%"><col style="width:20%"><col style="width:17%"><col style="width:9%"><col style="width:28%"><col style="width:14%"></colgroup><thead><tr><th>الصفة</th><th>الاسم</th><th>الرقم القومي</th><th>الجنسية</th><th>العنوان</th><th>الهاتف</th></tr></thead><tbody>${row('المسلِّم',r.p1)}${row('المستلم (المؤتمن)',r.p2)}${r.p3&&r.p3.name?row('المستفيد',r.p3):''}</tbody></table>`}
+function sheetHTML(r,fs,b){const s=db.settings,paras=r.paras&&r.paras.length?r.paras:gen(r);let h='';
+if(s.show&&(s.office||s.logo||s.addr))h+=`<div class="oh">${s.logo?`<img src="${s.logo}" alt="">`:''}<div><b>${esc(s.office)}</b><br>${esc(s.addr)} ${esc(s.phone)}</div></div>`;
+h+=`<h1>إيصال أمانة</h1><div class="mt"><span>رقم الإيصال: ${esc(r.no)}</span><span>التاريخ: ${fmtD(r.date)}</span></div>`+(()=>{const L=paras.filter(p=>!/^(أولًا|ثانيًا|ثالثًا):/.test(p)),pf=(p,i)=>`<p class="${i===0?'in':''}">${esc(p).replace(/\n/g,'<br>')}</p>`;
+return(L[0]!==undefined?pf(L[0],0):'')+ptab(r)+(r.kind==='cash'&&parseAmt(r.amount)>0?`<div class="am"><b>مبلغ الأمانة: ${amtTxt(r)}</b><br>${esc(r.words||'')}</div>`:'')+L.slice(1).map((p,i)=>pf(p,i+1)).join('')})();
+const sg=(t,p)=>`<div><b>${t}</b><br>الاسم: ${esc(p.name||'')}<br>التوقيع:</div>`;
+h+=`<div class="sg">${sg('المسلِّم',r.p1)}${sg('المستلم',r.p2)}${r.p3&&r.p3.name?sg('المستفيد',r.p3):''}</div>`;
+if(r.wit&&r.wit.length)h+=`<div class="wt">${r.wit.map((w,i)=>`<div><b>الشاهد ${i+1}</b><br>الاسم: ${esc(w.name||'')}<br>الرقم القومي: ${esc(w.nid||'')}<br>العنوان: ${esc(w.addr||'')}<br>التوقيع:</div>`).join('')}</div>`;
+return`<div class="sheet${b?' b':''}" style="font-size:${fs||db.settings.fs}pt">${h}</div>`}
+function fitFs(r){const mg=db.settings.mg,lim=(210-2*mg-3)*96/25.4,box=document.createElement('div');box.style.cssText=`position:absolute;visibility:hidden;left:-9999px;top:0;width:${297-2*mg}mm`;document.body.appendChild(box);
+let f=db.settings.fs;for(;f>6;f-=.25){box.innerHTML=sheetHTML(r,f,1);if(box.firstChild.scrollHeight<=lim)break}box.remove();return f}
+function doPrint(r){const e=validate(r);if(e.length){alert('أكمل البيانات أولًا:\n- '+e.join('\n- '));return}$('printArea').innerHTML=sheetHTML(r,fitFs(r),1);const t=document.title;document.title=`إيصال أمانة - ${r.p2.name} - ${r.no}`;window.print();setTimeout(()=>document.title=t,800)}
+/* ===== مساعدات النماذج ===== */
+const g=(o,k)=>k.split('.').reduce((a,x)=>a&&a[x],o)??'';
+function sp(o,k,v){const a=k.split('.');while(a.length>1){const x=a.shift();o=o[x]=o[x]||{}}o[a[0]]=v}
+const F=(k,l,t='text',x='')=>`<label>${l}<input type="${t}" data-k="${k}" value="${esc(g(cur,k))}" ${x}></label>`;
+const TA=(k,l)=>`<label>${l}<textarea data-k="${k}">${esc(g(cur,k))}</textarea></label>`;
+const S=(k,l,a,e)=>`<label>${l}<select data-k="${k}">${e?'<option value="">— اختر —</option>':''}${a.map(x=>`<option ${g(cur,k)===x?'selected':''}>${x}</option>`).join('')}</select></label>`;
+/* ===== الشاشات ===== */
+const V={
+dash(){const R=db.receipts,t=today(),n=R.filter(r=>new Date(r.ts-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10)===t).length,rc=[...R].sort((a,b)=>b.ts-a.ts).slice(0,5);
+return`<h2>لوحة التحكم</h2><div class="st"><div class="stat"><b>${R.length}</b>إجمالي الإيصالات</div><div class="stat"><b>${R.filter(r=>r.status==='saved').length}</b>الإيصالات المحفوظة</div><div class="stat"><b>${n}</b>أُنشئت اليوم</div></div>
+<div class="card"><h3>إجراءات سريعة</h3><div class="acts"><button class="btn g" data-a="nav" data-v="new">${ic('plus')} إنشاء إيصال جديد</button><button class="btn" data-a="nav" data-v="list">${ic('folder')} الإيصالات المحفوظة والبحث والتعديل</button><button class="btn o" data-a="nav" data-v="parties">${ic('users')} قاعدة الأطراف</button><button class="btn o" data-a="exp">${ic('dl')} نسخة احتياطية</button><button class="btn o" data-a="nav" data-v="settings">${ic('gear')} الإعدادات</button></div></div>
+<div class="card"><h3>آخر الإيصالات</h3>${rc.length?rc.map(rowH).join(''):'<p class="mu">لا توجد إيصالات بعد.</p>'}</div>
+<div class="warn">تنبيه: النموذج المولَّد يحتاج إلى مراجعة قانونية بحسب طبيعة المعاملة، وليس بديلًا عن استشارة محامٍ مختص. استخدم المنصة لتوثيق معاملات حقيقية فقط.</div>`},
+wiz(){const N=['البيانات الأساسية','الأطراف','محل الأمانة','التسليم','نص الإيصال','التوقيعات والمعاينة'];
+return`<h2>${db.receipts.some(x=>x.id===cur.id)?'تعديل إيصال':'إيصال أمانة جديد'}</h2><div class="steps">${N.map((n,i)=>`<button class="${i===step?'on':''}" data-a="go" data-i="${i}">${i+1}. ${n}</button>`).join('')}</div><div class="card" id="stp">${ST[step]()}</div>
+<div class="acts">${step>0?'<button class="btn o" data-a="prev">السابق</button>':''}${step<5?'<button class="btn g" data-a="next">التالي</button>':''}</div>`},
+list(){return`<h2>الإيصالات المحفوظة</h2><div class="card"><div class="g"><label>بحث (الاسم / الرقم القومي / رقم الإيصال)<input id="q" placeholder="اكتب للبحث"></label><label>بحث بالتاريخ<input id="qd" type="date"></label></div></div><div class="card" id="res"></div>`},
+parties(){const p=db.parties.find(x=>x.id===pe)||{};const f=(k,l)=>`<label>${l}<input id="pf_${k}" value="${esc(p[k]||'')}"></label>`;
+return`<h2>قاعدة الأطراف</h2><div class="card"><h3>${pe?'تعديل شخص':'إضافة شخص'}</h3><div class="g">${f('name','الاسم')}${f('nid','الرقم القومي')}${f('nat','الجنسية')}${f('phone','الهاتف')}</div>${f('addr','العنوان')}<div class="acts"><button class="btn g" data-a="psave">حفظ</button>${pe?'<button class="btn o" data-a="pcancel">إلغاء</button>':''}</div></div>
+<div class="card">${db.parties.length?db.parties.map(x=>`<div class="row"><div><b>${esc(x.name)}</b><br><small>${esc(x.nid||'')} ${esc(x.phone||'')}</small></div><div class="acts"><button class="btn s o" data-a="pedit" data-id="${x.id}">تعديل</button><button class="btn s d" data-a="pdel" data-id="${x.id}">حذف</button></div></div>`).join(''):'<p class="mu">لا يوجد أشخاص محفوظون.</p>'}</div>`},
+settings(){const s=db.settings,f=(k,l,t='text')=>`<label>${l}<input data-s="${k}" type="${t}" value="${esc(s[k])}"></label>`;
+return`<h2>الإعدادات</h2><div class="card"><h3>بيانات المكتب</h3><div class="g">${f('office','اسم المكتب')}${f('addr','عنوان المكتب')}${f('phone','رقم الهاتف')}<label>شعار المكتب<input type="file" accept="image/*" id="logo"></label></div>${s.logo?`<img src="${s.logo}" height="50"> <button class="btn s d" data-a="rmlogo">إزالة الشعار</button>`:''}<label><input type="checkbox" data-s="show" ${s.show?'checked':''} style="width:auto"> إظهار بيانات المكتب على الإيصال</label></div>
+<div class="card"><h3>الطباعة والترقيم</h3><div class="g">${f('fs','حجم الخط (نقطة)','number')}${f('mg','الهوامش (مم)','number')}${f('pre','بادئة الترقيم')}${f('next','الرقم التالي','number')}</div></div>
+<div class="card"><h3>النسخ الاحتياطي والبيانات</h3><div class="acts"><button class="btn" data-a="exp">${ic('dl')} تصدير JSON</button><button class="btn o" data-a="impb">استيراد نسخة احتياطية</button><button class="btn d" data-a="clear">مسح كل البيانات</button></div><p class="mu">تُخزَّن البيانات في هذا المتصفح فقط ولا تُرسل لأي خادم.</p></div>`}};
+function rowH(r){return`<div class="row"><div><b>${esc(r.no)}</b> — المستلم: ${esc(r.p2.name)} / المسلِّم: ${esc(r.p1.name)}<br><small>${fmtD(r.date)} · ${r.kind==='cash'?amtTxt(r):KINDS[r.kind]} · ${r.status==='saved'?'محفوظ':'مسودة'}</small></div><div class="acts"><button class="btn s o" data-a="view" data-id="${r.id}">معاينة</button><button class="btn s o" data-a="edit" data-id="${r.id}">تعديل</button><button class="btn s o" data-a="copy" data-id="${r.id}">نسخ</button><button class="btn s" data-a="prow" data-id="${r.id}">${ic('print')} طباعة / PDF</button><button class="btn s d" data-a="del" data-id="${r.id}">حذف</button></div></div>`}
+function res(){const q=($('q').value||'').trim().toLowerCase(),d=$('qd').value;const L=db.receipts.filter(r=>(!q||[r.no,r.p1.name,r.p2.name,r.p3&&r.p3.name,r.p1.nid,r.p2.nid,r.p3&&r.p3.nid].some(x=>x&&String(x).toLowerCase().includes(q)))&&(!d||r.date===d)).sort((a,b)=>b.ts-a.ts);$('res').innerHTML=L.length?L.map(rowH).join(''):'<p class="mu">لا توجد نتائج.</p>'}
+/* ===== خطوات المعالج ===== */
+const ST=[
+()=>`<div class="g">${F('no','رقم الإيصال (تلقائي وقابل للتعديل)')}${F('date','تاريخ تحرير الإيصال','date')}${F('place','مكان تحرير الإيصال')}${S('gov','المحافظة',GOV,1)}${F('city','المدينة أو المركز')}</div><div class="warn">أرِّخ الإيصال بتاريخ تحريره الفعلي فقط.</div>`,
+()=>['p1','p2','p3'].map((k,i)=>`<div class="card" style="border:1px solid #e1e5ee"><h3>${['الطرف الأول: المسلِّم','الطرف الثاني: المستلم (المؤتمن)','الطرف الثالث: المستفيد / مستلم الأمانة (إن وُجد)'][i]}</h3><div class="acts"><select id="sel_${k}" style="width:auto"><option value="">— اختر شخصًا محفوظًا —</option>${db.parties.map(p=>`<option value="${p.id}">${esc(p.name)}</option>`).join('')}</select><button class="btn s o" data-a="fill" data-k="${k}">تعبئة</button><button class="btn s o" data-a="sp" data-k="${k}">حفظ في قاعدة الأطراف</button></div><div class="g">${F(k+'.name','الاسم رباعي')}${F(k+'.nid','الرقم القومي (14 رقمًا)','text','inputmode="numeric" maxlength="14"')}${F(k+'.nat','الجنسية')}${F(k+'.phone','رقم الهاتف','tel')}</div>${F(k+'.addr','العنوان بالتفصيل')}</div>`).join(''),
+()=>{let h=`<div class="g">${S('kind','نوع الأمانة',Object.keys(KINDS)).replace(/<option( selected)?>(\w+)</g,(m,s,v)=>`<option value="${v}"${s||''}>${KINDS[v]}<`)}</div>`;
+if(cur.kind==='cash')h+=`<div class="g">${F('amount','المبلغ بالأرقام','text','inputmode="decimal"')}${S('cur','العملة',CUR)}</div><label>المبلغ بالحروف (قابل للتعديل)<input id="wd" data-k="words" value="${esc(cur.words)}"></label><button class="btn s o" data-a="rw">إعادة التوليد التلقائي</button>`;
+else h+=`${TA('it.desc','وصف الشيء أو المنقول / المستند')}<div class="g">${F('it.type','النوع')}${F('it.cnt','العدد')}${F('it.qty','الكمية')}${F('it.cond','الحالة')}</div>${F('it.other','بيانات تعريفية أخرى')}`;return h},
+()=>`${TA('reason','سبب التسليم')}${TA('purpose','الغرض الفعلي من تسليم الأمانة')}<div class="g">${F('to','الجهة أو الشخص المطلوب التسليم إليه')}${F('due','تاريخ التسليم أو الاستحقاق (إن حُدد)','date')}</div>${TA('extra','تفاصيل إضافية عن المعاملة')}<label><input type="checkbox" data-k="delivered" ${cur.delivered?'checked':''} style="width:auto"> أؤكد أن واقعة التسليم تمت فعليًا (بدون التأكيد يُصاغ النص كاتفاق لا كإقرار بالتسليم)</label><div class="warn">لا تدخل سببًا أو غرضًا لم يحدث فعليًا.</div>`,
+()=>{if(!cur.edited)cur.paras=gen(cur);return`<p class="mu">هذا النص مولَّد من البيانات وقابل للتعديل بالكامل.</p><div id="pl">${cur.paras.map((p,i)=>`<div class="pr"><textarea data-pi="${i}">${esc(p)}</textarea><div class="acts"><button class="btn s o" data-a="up" data-i="${i}">↑</button><button class="btn s o" data-a="dn" data-i="${i}">↓</button><button class="btn s d" data-a="dp" data-i="${i}">✕</button></div></div>`).join('')}</div><div class="acts"><button class="btn o" data-a="ap">إضافة فقرة</button><button class="btn d" data-a="rg">استعادة النص الأصلي المولَّد</button></div>`},
+()=>`<h3>الشهود (اختياري)</h3>${(cur.wit||[]).map((w,i)=>`<div class="g" style="margin-bottom:8px"><label>الاسم<input data-k="wit.${i}.name" value="${esc(w.name||'')}"></label><label>الرقم القومي<input data-k="wit.${i}.nid" value="${esc(w.nid||'')}" maxlength="14"></label><label>العنوان<input data-k="wit.${i}.addr" value="${esc(w.addr||'')}"></label><button class="btn s d" data-a="dw" data-i="${i}">حذف الشاهد</button></div>`).join('')}<button class="btn o s" data-a="aw">إضافة شاهد</button>
+<div class="warn">النموذج يحتاج مراجعة قانونية بحسب طبيعة المعاملة وليس بديلًا عن استشارة محامٍ مختص. يوقّع الأطراف يدويًا بعد الطباعة.</div><h3>المعاينة (A4 بالعرض)</h3><div class="pv" id="pv">${sheetHTML(cur,fitFs(cur))}</div>
+<div class="acts"><button class="btn g" data-a="commit">حفظ الإيصال</button><button class="btn o" data-a="draft">حفظ كمسودة</button><button class="btn" data-a="pdf">${ic('dl')} تنزيل PDF</button><button class="btn" data-a="pr">${ic('print')} طباعة</button></div><small>تنزيل PDF: في نافذة الطباعة اختر «الحفظ بصيغة PDF» والمقاس A4 والاتجاه أفقي (بالعرض) (يُحفظ باسم الملف المقترح تلقائيًا).</small>`];
+/* ===== التنقل ===== */
+function buildNav(){$('nav').innerHTML=[['dash','home','الرئيسية'],['new','plus','إيصال جديد'],['list','folder','الإيصالات'],['parties','users','قاعدة الأطراف'],['settings','gear','الإعدادات']].map(([v,i,t])=>`<button data-a="nav" data-v="${v}" data-n="${v}">${ic(i)} ${t}</button>`).join('')}
+function show(v){view=v;document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.n===(v==='wiz'?'new':v)));$('main').innerHTML=V[v]();if(v==='list')res();scrollTo(0,0)}
+function startNew(){cur=newReceipt();step=0;show('wiz')}
+function renderStep(){$('main').innerHTML=V.wiz();scrollTo(0,0)}
+function commit(status){const e=validate(cur);if(status==='saved'&&e.length){alert('أكمل البيانات أولًا:\n- '+e.join('\n- '));return false}
+if(cur.date<today()&&!cur.bd&&status==='saved'){if(!confirm('تاريخ الإيصال سابق لليوم. لا تؤرخ الإيصال إلا بتاريخ الواقعة الفعلي. هل التاريخ صحيح؟'))return false;cur.bd=1}
+if(!cur.paras.length)cur.paras=gen(cur);cur.status=status;cur.ts=cur.ts||Date.now();const i=db.receipts.findIndex(x=>x.id===cur.id);
+if(i<0){if(cur.no===nextNo())db.settings.next++;db.receipts.push(JSON.parse(JSON.stringify(cur)))}else db.receipts[i]=JSON.parse(JSON.stringify(cur));save();toast('تم الحفظ');return true}
+function download(name,txt){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type:'application/json'}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500)}
+const byId=id=>db.receipts.find(x=>x.id===id);
+/* ===== الأحداث ===== */
+const A={
+nav:b=>b.dataset.v==='new'?startNew():show(b.dataset.v),
+go:b=>{step=+b.dataset.i;renderStep()},next:()=>{step++;renderStep()},prev:()=>{step--;renderStep()},
+fill:b=>{const k=b.dataset.k,p=db.parties.find(x=>x.id===$('sel_'+k).value);if(!p)return toast('اختر شخصًا أولًا','e');cur[k]={name:p.name,nid:p.nid,nat:p.nat,phone:p.phone,addr:p.addr};renderStep()},
+sp:b=>{const p=cur[b.dataset.k];if(!p.name)return toast('أدخل الاسم أولًا','e');db.parties.push({id:uid(),name:p.name,nid:p.nid||'',nat:p.nat||'',phone:p.phone||'',addr:p.addr||''});save();toast('تم حفظ الطرف');renderStep()},
+rw:()=>{cur.words=moneyWords(cur);cur.wm=false;renderStep()},
+ap:()=>{cur.paras.push('');cur.edited=true;renderStep()},dp:b=>{cur.paras.splice(+b.dataset.i,1);cur.edited=true;renderStep()},
+up:b=>{const i=+b.dataset.i;if(i>0){[cur.paras[i-1],cur.paras[i]]=[cur.paras[i],cur.paras[i-1]];cur.edited=true;renderStep()}},
+dn:b=>{const i=+b.dataset.i;if(i<cur.paras.length-1){[cur.paras[i+1],cur.paras[i]]=[cur.paras[i],cur.paras[i+1]];cur.edited=true;renderStep()}},
+rg:()=>{if(confirm('سيتم استبدال تعديلاتك بالنص المولَّد من البيانات. متابعة؟')){cur.edited=false;cur.paras=gen(cur);renderStep()}},
+aw:()=>{(cur.wit=cur.wit||[]).push({});renderStep()},dw:b=>{cur.wit.splice(+b.dataset.i,1);renderStep()},
+commit:()=>{if(commit('saved'))show('list')},draft:()=>{if(!cur.no)return toast('رقم الإيصال مطلوب','e');if(commit('draft'))show('list')},
+pdf:()=>doPrint(cur),pr:()=>doPrint(cur),
+prow:b=>doPrint(byId(b.dataset.id)),
+view:b=>{cur=JSON.parse(JSON.stringify(byId(b.dataset.id)));step=5;show('wiz')},edit:b=>{cur=JSON.parse(JSON.stringify(byId(b.dataset.id)));step=0;show('wiz')},
+copy:b=>{const c=JSON.parse(JSON.stringify(byId(b.dataset.id)));Object.assign(c,{id:uid(),no:nextNo(),date:today(),delivered:false,edited:false,paras:[],bd:0,status:'draft',ts:Date.now()});cur=c;step=0;show('wiz');toast('نسخة جديدة — راجع البيانات وأكّد واقعة التسليم')},
+del:b=>{if(confirm('حذف هذا الإيصال نهائيًا؟ يُنصح بتنزيل نسخة احتياطية أولًا.')){if(confirm('هل تريد تنزيل نسخة احتياطية قبل الحذف؟'))A.exp();db.receipts=db.receipts.filter(x=>x.id!==b.dataset.id);save();show(view)}},
+psave:()=>{const o={};['name','nid','nat','phone','addr'].forEach(k=>o[k]=$('pf_'+k).value.trim());if(!o.name)return toast('الاسم مطلوب','e');if(o.nid&&!/^\d{14}$/.test(o.nid))return toast('الرقم القومي 14 رقمًا','e');if(pe)Object.assign(db.parties.find(x=>x.id===pe),o);else db.parties.push({id:uid(),...o});pe=null;save();show('parties')},
+pedit:b=>{pe=b.dataset.id;show('parties')},pcancel:()=>{pe=null;show('parties')},pdel:b=>{if(confirm('حذف هذا الشخص من القاعدة؟')){db.parties=db.parties.filter(x=>x.id!==b.dataset.id);save();show('parties')}},
+rmlogo:()=>{db.settings.logo='';save();show('settings')},
+exp:()=>download('amanat-backup-'+today()+'.json',JSON.stringify(db,null,1)),impb:()=>$('imp').click(),
+clear:()=>{if(!confirm('سيتم حذف كل الإيصالات والأطراف والإعدادات نهائيًا. متابعة؟'))return;if(confirm('هل تريد تنزيل نسخة احتياطية أولًا؟'))A.exp();if(!confirm('تأكيد نهائي للمسح؟'))return;try{localStorage.removeItem(KEY)}catch(e){}location.reload()}};
+document.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(b&&A[b.dataset.a])A[b.dataset.a](b)});
+document.addEventListener('input',e=>{const t=e.target;
+if(t.id==='q'||t.id==='qd')return res();
+if(t.dataset.pi!==undefined){cur.paras[+t.dataset.pi]=t.value;cur.edited=true;return}
+if(t.dataset.s){const v=t.type==='checkbox'?t.checked:t.type==='number'?+t.value:t.value;db.settings[t.dataset.s]=v;save();applySet();return}
+const k=t.dataset.k;if(!k||!cur)return;sp(cur,k,t.type==='checkbox'?t.checked:t.value);
+if(k==='words')cur.wm=true;
+if((k==='amount'||k==='cur')&&!cur.wm){cur.words=moneyWords(cur);const w=$('wd');if(w)w.value=cur.words}
+if(k==='kind'){if(cur.kind==='cash'&&!cur.words)cur.words=moneyWords(cur);renderStep()}
+if(k==='no'||k.startsWith('wit.')||k==='delivered'){}});
+$('imp').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(!Array.isArray(d.receipts)||!Array.isArray(d.parties))throw 0;if(!confirm('سيتم استبدال البيانات الحالية بالنسخة المستوردة ('+d.receipts.length+' إيصال). متابعة؟'))return;db={...db,...d,settings:{...db.settings,...d.settings}};save();applySet();show('dash');toast('تم الاستيراد')}catch(x){toast('ملف النسخة الاحتياطية غير صالح','e')}};r.readAsText(f);e.target.value=''});
+document.addEventListener('change',e=>{if(e.target.id==='logo'){const f=e.target.files[0];if(!f)return;if(f.size>500000)return toast('حجم الشعار كبير (الحد 500KB)','e');const r=new FileReader();r.onload=()=>{db.settings.logo=r.result;save();show('settings')};r.readAsDataURL(f)}});
+buildNav();load();show('dash');
+</script></body></html>
